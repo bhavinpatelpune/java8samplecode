@@ -17,6 +17,8 @@ public class StringConcept{
 		System.out.println("StringFormatReverse() - " + StringFormatReverse("hello"));
 		System.out.println("StringFormatReverse1() - " + StringFormatReverse1("hello"));
 		System.out.println("StringFormatReverse2() - " + StringFormatReverse2("hello"));
+		
+		ReverseTheWords("My Name is Bhavin");
 	}
 	
 	public static void Sum(int a, int b){
@@ -87,7 +89,15 @@ public class StringConcept{
 	    return input1.toString();   
 	}
 	
-	
+	public static void ReverseTheWords(String str){
+		String s[] = str.split(" ");
+		String ans = "";
+		for(int i = s.length - 1; i >= 0; i--) {
+			ans += s[i] + " ";
+		}
+		System.out.println("Original String: " + str);
+		System.out.println("Reversed String: " + ans.substring(0, ans.length() - 1));
+	}
 	 
 	
 	
