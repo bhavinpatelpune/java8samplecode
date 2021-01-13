@@ -14,8 +14,8 @@ public class OldNewForeachLoop {
 	    objmap.put("A", 1);
 	    objmap.put("B", 2);
 	    objmap.put("C", 3);
-	    objmap.put("C", 3);
-	    objmap.put("C", 3);
+	    objmap.put("C", 4);
+	    objmap.put("C", 5);
 	    objmap.put(null, 4);
 
 	    System.out.println("Old classical foreach loop before Java-8");
@@ -92,10 +92,10 @@ public class OldNewForeachLoop {
 	
 	public static void main(String[] args) {
 		OldClassicLoop();
-		NewloopMapInJava8();
-		
-		OldClassicListLoop();
-		NewloopListInJava8();
+//		NewloopMapInJava8();
+//		
+//		OldClassicListLoop();
+//		NewloopListInJava8();
 	}
 }
 

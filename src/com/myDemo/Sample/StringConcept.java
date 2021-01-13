@@ -19,6 +19,20 @@ public class StringConcept{
 		System.out.println("StringFormatReverse2() - " + StringFormatReverse2("hello"));
 		
 		ReverseTheWords("My Name is Bhavin");
+		
+		//display(null);
+	}
+	
+	public static void display(Object ob){
+		
+	}
+	
+	public static void display(String ob){
+			
+		}
+	
+	public static void display(Integer ob){
+		
 	}
 	
 	public static void Sum(int a, int b){
