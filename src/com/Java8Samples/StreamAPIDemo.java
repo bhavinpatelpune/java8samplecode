@@ -9,7 +9,33 @@ import java.util.Set;
 // Below Two imports are related to StreamAPI & Functions (Java-8)
 import java.util.function.Function;
 import java.util.stream.Collectors;
+/*
+What Is a Stream?
+So what is a stream? Informally, you can think of it as a “fancy iterator” that supports database-like operations. 
+Technically, it’s a sequence of elements from a source that supports aggregate operations. Here’s a breakdown of the more 
+formal definition:
 
+Sequence of elements
+A stream provides an interface to a sequenced set of values of a specific element type. However, streams don’t actually store 
+elements; they’re computed on demand.
+
+Source
+Streams consume from a data-providing source such as collections, arrays, or I/O resources.
+
+Aggregate operations
+Streams support database-like operations and common operations from functional programming languages, 
+such as filter, map, reduce, findFirst, allMatch, sorted, and so on.
+
+Furthermore, stream operations have two additional fundamental characteristics that differentiate them from collections:
+
+Pipelining
+Many stream operations return a stream themselves. This allows operations to be chained to form a larger pipeline. 
+This style enables certain optimizations such as laziness, short-circuiting, and loop fusion.
+
+Internal iteration
+In contrast to collections, which are iterated explicitly (external iteration), stream operations do the iteration behind the 
+scenes for you.
+*/
 public class StreamAPIDemo {
 	
 	// Count value in a given array, if count is more than two group by used to sum values

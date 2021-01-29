@@ -1,4 +1,4 @@
-package com.myDemo.Sample;
+package com.strings.questions;
 
 public class Palindrome {
 	

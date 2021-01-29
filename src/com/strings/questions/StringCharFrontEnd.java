@@ -1,4 +1,4 @@
-package com.myDemo.Sample;
+package com.strings.questions;
 
 //Java program for the above approach
 import java.io.*;

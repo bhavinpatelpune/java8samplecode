@@ -1,4 +1,4 @@
-package com.myDemo.Sample;
+package com.strings.questions;
 // String Manipulation Concepts
 // import java.io.*; 
 
