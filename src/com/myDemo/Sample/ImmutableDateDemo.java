@@ -18,8 +18,8 @@ public final class ImmutableDateDemo {
     // Date class is mutable as it provide setters to change various date/time parts
     private final Date mutableField;
  
-    // Default private constructor will ensure no unplanned construction of class
-    private ImmutableDateDemo(Integer fld1, String fld2, Date date) {
+    // Default constructor will ensure no unplanned construction of class
+    public ImmutableDateDemo(Integer fld1, String fld2, Date date) {
         this.immutableField1 = fld1;
         this.immutableField2 = fld2;
         this.mutableField = new Date(date.getTime());

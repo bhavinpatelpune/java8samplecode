@@ -13,7 +13,7 @@ class Software extends App{
 }
 
 
-public class inheritance {
+public class Inheritance {
 	public static void main(String[] args) {
 		App myApp = new Software();
 		myApp.doWork(); // It will print Line-11 --> Execute Software 

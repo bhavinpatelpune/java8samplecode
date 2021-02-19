@@ -11,8 +11,21 @@ public class Overloading {
 		System.out.println("Calling -> Integer add(Integer a, Integer b) ");
 		return a+b;
 	}
+	
+//	static void display(Integer a){
+//		System.out.println("Calling -> void display(Integer a)");
+//	}
+	
+	static void display(String a){
+		System.out.println("Calling -> void display(String a)");
+	}
+	
+	static void display(Object a){
+		System.out.println("Calling -> void display(Object a)");
+	}
 
 	public static void main(String[] args) {
-		add(1,1); // It will call primitive type call first
+		add(1,1); // It will call primitive type call first, Not use wrapper
+		display(null); //It'll throw compile time error - "The method display(Integer) is ambiguous for the type Overloading"
 	}
 }
