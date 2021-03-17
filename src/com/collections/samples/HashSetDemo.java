@@ -20,8 +20,9 @@ public class HashSetDemo {
 		 hs.add("Java");
 		 hs.add("Spring");
 		 hs.add("Oracle19c");
-		 hs.add("Java8");
+		 hs.add("Java8");		 
 		 hs.add("Spring2");
+		 hs.add("Java8");
 		 hs.add(null);
 	
 		 // Method-1 to print value using Iterator		 

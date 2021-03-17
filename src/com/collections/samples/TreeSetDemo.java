@@ -1,6 +1,7 @@
 package com.collections.samples;
 
 import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class TreeSetDemo {
@@ -27,6 +28,15 @@ public class TreeSetDemo {
 		 for(String s: ts){
 			 System.out.println(s + " ");
 		 }	
+		 
+		 
+		 Set<Integer> nums = new TreeSet<>();
+		 nums.add(30);
+		 nums.add(20);
+		 nums.add(15);
+		 nums.add(20);
+		 
+		 System.out.println("NUM LIST - " + nums);
 
 	}
 

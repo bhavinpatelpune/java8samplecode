@@ -1,5 +1,6 @@
 package com.AdvancedJava.SteamAPI;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ public class StreamMain {
 	public static void main(String[] args) {
 
 		List<Employee> empList = new ArrayList<>();	
+		List<Integer> numList = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 		
 		empList.add(new Employee(1, "Bhavin", "Consulting", 19999.00, new Date()));
 		empList.add(new Employee(2, "Manoj", "Consulting", 29999.00, new Date()));
@@ -65,6 +67,13 @@ public class StreamMain {
         
         // print only Odd number of employee-ID
         empList.stream().filter(e -> e.getId()%2 == 1).forEach(System.out::println);
+        
+        System.out.println("---------------------------------");
+
+        //Print all even number from given integer list and print Square root values
+        numList.stream().filter(n -> n % 2 == 0).map(s -> s*s).forEach(System.out::println);
+        
+        System.out.println("---------------------------------");
         
 	}
 
