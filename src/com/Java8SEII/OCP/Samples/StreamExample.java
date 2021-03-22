@@ -17,7 +17,20 @@ public class StreamExample {
 							     .flatMap(rs-> rs.stream());
 		bs2.forEach(b-> System.out.println(b)); //text1 text2
 				
+		System.out.println("---------------------------");
 
+		Stream.of("Java","Unix","Linux")
+		      .filter(s-> s.contains("n"))
+		      .peek(s-> System.out.println("Peek : " + s))
+		      .findFirst();  ///Peek : Unix
+		
+		System.out.println("---------------------------");
+		
+		List<Integer> list1 = Arrays.asList(10, 20); 
+		List<Integer> list2 = Arrays.asList(15, 30);
+		Stream.of(list1, list2).flatMap(list -> list.stream()).forEach(s -> System.out.print(s + " "));
+		// 10 20 15 30
+		
 	}
 
 }

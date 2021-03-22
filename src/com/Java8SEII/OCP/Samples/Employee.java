@@ -2,11 +2,12 @@ package com.Java8SEII.OCP.Samples;
 
 public class Employee {
 	
-	String dept, name;
+	String dept, name, lname;
 	
-	public Employee(String d, String n){
+	public Employee(String d, String n, String l){
 		dept = d;
 		name = n;
+		lname = l;
 	}
 
 	public String toString() {
@@ -19,5 +20,9 @@ public class Employee {
 
 	public String getName() {
 		return name;
+	}
+	
+	public String getLName() {
+		return lname;
 	}
 }

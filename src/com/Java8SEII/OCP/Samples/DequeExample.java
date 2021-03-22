@@ -29,5 +29,15 @@ public class DequeExample {
 		System.out.println("");
 		products.forEach(s -> System.out.print(s)); // p1p1
 													// p2p3
+		
+		System.out.println("---------------------------");
+		
+		Deque<String> dqueue = new ArrayDeque<String>();
+		dqueue.add("Susan");
+		dqueue.add("Allen");
+		dqueue.add("David");
+		System.out.println(dqueue.pop());
+		System.out.println(dqueue.remove());
+		System.out.println(dqueue);  // Susan Allen [David]
 	}
 }

@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -56,6 +60,10 @@ public class ListExample {
 		vehicles.stream()
 				.sorted((v1,v2)-> Integer.compare(v1.getVid(), v2.getVid()))
 				.forEach(System.out::println);  //OP: TruckCarBike
+		
+		vehicles.stream()
+		.sorted(Comparator.comparing(Vehicle::getVName).reversed().thenComparing(Vehicle::getVName))
+		.forEach(System.out::println);  //OP: TruckCarBike
 		
 		System.out.println("---------------------------");
 		
@@ -117,10 +125,10 @@ public class ListExample {
 		
 		// Question: Dump has answer as A. [sales:Ada, hr:Bob, sales:Bob, hr:Eva] but output showing other answer below
 		List<Employee> empList = Arrays.asList(
-				new Employee("sales","Ada"),
-				new Employee("sales","Bob"),
-				new Employee("hr","Bob"),
-				new Employee("hr","Eva"));
+				new Employee("sales","Ada","Pat"),
+				new Employee("sales","Bob","Pat"),
+				new Employee("hr","Bob","Pat"),
+				new Employee("hr","Eva","Pat"));
 		
 		Stream<Employee>  s = empList.stream()
 									 .sorted(Comparator.comparing((Employee e) -> e.getDept())
@@ -137,19 +145,19 @@ public class ListExample {
 		
 		System.out.println("---------------------------");
 		
-		List<String> li = Arrays.asList("Java","J2EE","J2ME","JSP","Oracle");
+		List<String> li = Arrays.asList("Java","J2EE","J2ME","JSP","Oracle","JSTL");
 		Predicate<String> val = p -> p.contains("J");
 		
 		List<String> newLi = li.stream().filter(x->x.length()>3)
 									    .filter(val)
 									    .collect(Collectors.toList());
-		System.out.println(newLi);  // [Java, J2EE, J2ME]
+		System.out.println(newLi);  // [Java, J2EE, J2ME, JSTL]
 		
 		System.out.println("---------------------------");
 		
 		List<String> myli = Arrays.asList("EE","SE");
 		String ans = myli.parallelStream().reduce("Java ", (a,b)-> a.concat(b));
-		System.out.println(ans);  // Java EEJava SE
+		System.out.println(ans);  // Java EE Java SE
 		
 		System.out.println("---------------------------");
 		
@@ -165,5 +173,75 @@ public class ListExample {
 							   	Collectors.toList())));
 		System.out.println(regionNames);  //{ASIA=[Japan], EUROPE=[Italy, Germany]}
 		
+		System.out.println("---------------------------");
+		
+		List<String> words = Arrays.asList("win","try","best","luck","do");
+		Predicate<String> test11 = w -> {
+			System.out.println("Checking...");
+			return w.equals("do");
+		};
+		//Predicate test22 = (String w) -> w.length() > 3;  ///Lambda expression's parameter w is expected to be of type Object
+		//words.stream().filter(test22).filter(test11).count();
+		
+		System.out.println("---------------------------");
+		
+		List<Integer> nums = Arrays.asList (10, 20, 8); 
+		System.out.println(nums.stream().max(Comparator.comparing(a -> a)).get()); // 20
+		
+		System.out.println("---------------------------");
+		
+		List<String> words1 = Arrays.asList("Why ","What ","When ");
+		BinaryOperator<String> operator = (s1,s2) -> s1.concat(s2);
+		String sen = words1.stream().reduce("Word : " + operator, operator);
+		System.out.println(sen);  // Why What When
+		
+		System.out.println("---------------------------");
+		
+		List<Product> ll = Arrays.asList(new Product("TV", 1000), new Product("Fridge",2000));
+		Consumer<Product> raise = e-> e.setPrice(e.getPrice() + 100);
+		ll.forEach(raise);
+		ll.stream().forEach(Product::printVal); // TV Price : 1100 	Fridge Price : 2100
+		
+		System.out.println("---------------------------");
+		
+		List<String> str = Arrays.asList ("my", "pen", "is", "your", "pen"); 
+		Predicate<String> test1 = ss -> {
+						int i = 0;
+						boolean result = ss.contains ("pen");
+						System.out.print(i++ + ":"); 
+						return result;
+					};
+			str.stream()
+				.filter(test1)
+				.findFirst()
+				.ifPresent(System.out ::println);  // 0:0:pen
+			
+		System.out.println("---------------------------");
+		
+		
+		List<Integer> mylist = Arrays.asList (10,20,30);
+		Function<Integer, Integer> fn = f1 -> f1 + f1;
+		Consumer<Integer> conVal = sss-> System.out.println("Val: " + sss + " ");
+		mylist.stream().map(fn).forEach(conVal); //	Val: 20 		Val: 40 		Val: 60 
+		
+		System.out.println("---------------------------");
+		
+		List<Employee> emp = Arrays.asList (new Employee("sales","Ada","Patel"),
+										new Employee("sales","Bob","ZZZ"),
+										new Employee("hr","Bob","AAA"),
+										new Employee("hr","Eva","BBB")); 
+		emp.stream()
+				.sorted(Comparator.comparing(Employee::getLName).reversed().thenComparing(Employee::getLName))
+				.collect(Collectors.toList());
+		System.out.println(emp); // [sales:Ada, sales:Bob, hr:Bob, hr:Eva]
+		
+		
+		System.out.println("---------------------------");
+		
+		Set<Car> cars = new TreeSet<>(); 
+		cars.add(new Car(10123, "Ford"));
+		cars.add(new Car(10124, "BMW"));
+		System.out.println(cars); 
+		// Exception in thread "main" java.lang.ClassCastException: com.Java8SEII.OCP.Samples.Car cannot be cast to java.lang.Comparable
 	}
 }
