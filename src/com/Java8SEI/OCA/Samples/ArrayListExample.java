@@ -77,15 +77,45 @@ public class ArrayListExample {
 		System.out.println("-----------------");
 		
 		ArrayList<Integer> points = new ArrayList<>();
-		points.add(1);
-		points.add(2);
-		points.add(3);
-		points.add(4);
-		points.add(null);
-		
+		points.add(1);//0
+		points.add(2);//1
+		points.add(3);//2
+		points.add(4);//3
+		points.add(null);//4
+		System.out.println(points);
 		points.remove(1);
 		points.remove(null);
 		System.out.println(points);  // OP: [1, 3, 4]
+		
+		System.out.println("-----------------");
+		
+		ArrayList<Animal> myAnimalList1 = new ArrayList<>();
+		myAnimalList1.add(new Tiger());
+		
+		ArrayList<Hunter> myAnimalList2 = new ArrayList<>();
+		myAnimalList2.add(new Cat());
+		
+		ArrayList<Hunter> myAnimalList3 = new ArrayList<>();
+		myAnimalList3.add(new Tiger());
+		
+//		ArrayList<Tiger> myAnimalList4 = new ArrayList<>();
+//		myAnimalList4.add(new Cat()); // The method add(Tiger) in the type ArrayList<Tiger> is not applicable for the arguments (Cat)
+		
+		ArrayList<Animal> myAnimalList5 = new ArrayList<>();
+		myAnimalList5.add(new Cat());
+		
+		System.out.println("-----------------");
+		
+		List colors = new ArrayList();
+		colors.add("green"); //0
+		colors.add("blue"); //1
+		colors.add("red");  //2
+		colors.add("yello"); //3
+		
+		colors.remove(2);
+		colors.add(3,"cyan");
+		System.out.println(colors);//green blue yellow cyan
+		
 		
 	}
 }

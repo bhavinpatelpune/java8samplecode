@@ -1,5 +1,7 @@
 package com.Java8SEI.OCA.Samples;
 
+import java.util.ArrayList;
+
 public class ArrayExample {
 	
 	public static void main(String[] args) {
@@ -47,7 +49,44 @@ public class ArrayExample {
 		for(int i=0; i < intArr.length ; i++){
 			System.out.println(intArr[i] + " ");
 		}
-
+		
+		System.out.println("-----------------");
+		
+		int a[] = {1,2,3,4,5};
+		for(int i=0; i<5; i+=2){
+			System.out.println(a[i]); // 1 	3  5
+		}
+		
+		System.out.println("-----------------");
+		
+//		ArrayList mylist = new ArrayList();
+//		String[] myArray;
+//		try{
+//			while(true){
+//				mylist.add("My String");
+//			}
+//		}catch(RuntimeException e){
+//			System.out.println("Caught a RuntimeException");
+//		}catch(Exception e){
+//			System.out.println("Caught an Exception");
+//		}
+//		System.out.println("Ready to use"); 
+		//Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+		
+		System.out.println("-----------------");
+		
+		Planet[] myplanets = {
+							new Planet("Mercury",0),
+							new Planet("Venus",0),
+							new Planet("Earth",1),
+							new Planet("Mars",2)
+							};
+		
+		System.out.println(myplanets);  // [Lcom.Java8SEI.OCA.Samples.Planet;@6d06d69c
+		System.out.println(myplanets[2].name);  // Earth
+		System.out.println(myplanets[2].moons); // 1
+		
+		
 	}
 
 }

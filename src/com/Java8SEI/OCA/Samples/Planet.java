@@ -9,21 +9,21 @@ public class Planet {
 		this.moons = moons;
 	}
 	
-	public static void main(String[] args) {
-		Planet[] myplanets = {
-				new Planet("Mercury",0),
-				new Planet("Venus",0),
-				new Planet("Earth",1),
-				new Planet("Mars",2)
-		};
-		
-		System.out.println(myplanets);
-		System.out.println(myplanets[2].name);
-		System.out.println(myplanets[2].moons);
-		
-		//OP: [Lcom.Java8SEII.OCA.OCP.Samples.Planet;@15db9742
-		//	Earth
-		//	1
-	}
+//	public static void main(String[] args) {
+//		Planet[] myplanets = {
+//				new Planet("Mercury",0),
+//				new Planet("Venus",0),
+//				new Planet("Earth",1),
+//				new Planet("Mars",2)
+//		};
+//		
+//		System.out.println(myplanets);
+//		System.out.println(myplanets[2].name);
+//		System.out.println(myplanets[2].moons);
+//		
+//		//OP: [Lcom.Java8SEII.OCA.OCP.Samples.Planet;@15db9742
+//		//	Earth
+//		//	1
+//	}
 
 }

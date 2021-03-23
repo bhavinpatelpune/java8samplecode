@@ -30,7 +30,7 @@ public class StringExample {
 		ta = ta.concat("B ");
 		String tb = "C ";
 		ta = ta.concat(tb);
-		ta.replace('C', 'D');
+		ta.replace("C", "D");
 		ta = ta.concat(tb);
 		System.out.println(ta); // A B C C 
 		
@@ -38,13 +38,14 @@ public class StringExample {
 		
 		String strr = "Hello World ";
 		strr.trim();
+		System.out.println(strr);
 		int ii1 = strr.indexOf(" ");
 		System.out.println(ii1);  // OP: 5
 		
 		System.out.println("-----------------");
 		
-		String st11= "JAVA";
-		String[] st22 = {"J","A","V","A"};
+		String st11= "Java";
+		String[] st22 = {"J","a","v","a"};
 		String st33 = "";
 		for(String ss: st22){
 			st33 = st33 + ss;
@@ -77,6 +78,25 @@ public class StringExample {
 		
 		System.out.println("-----------------");
 		
+		StringBuilder sbb = new StringBuilder("Java");
+		String str1 = "Java";
+		if(sbb.toString().equals(str1.toString()))
+			System.out.println("Match 1");  // Match 1
+		else if (sbb.equals(str1))
+			System.out.println("Match 2");
+		else
+			System.out.println("No Match");
+		
+		System.out.println("-----------------");
+		
+		String str11=" ";
+		str11.trim();
+		System.out.println(str11.equals("") + " " + str11.isEmpty());  // false false
+		
+		System.out.println("-----------------");
+		
+		System.out.println("Hello " + new StringBuilder("Java SE 8")); // Hello Java SE 8
+		System.out.println("Hello " + new MyString("Java SE 8"));  // Hello com.Java8SEI.OCA.Samples.MyString@15db9742
 		
 	}
 

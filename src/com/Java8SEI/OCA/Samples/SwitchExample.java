@@ -44,6 +44,24 @@ public class SwitchExample {
 		default:
 			System.out.println("Default Done!");
 		}
+		
+		System.out.println("-----------------");
+		
+		int wd = 0; //-1 0 2 1
+		String days[] = {"sun","mon","wed","sat"};
+		for(String s: days){
+			switch(s){
+				case "sat":
+				case "sun":
+					wd -=1; 
+					break;
+				case "mon":
+					wd++;
+				case "wed":
+					wd+=2;
+			}
+		}
+		System.out.println(wd);  // 3
 
 	}
 

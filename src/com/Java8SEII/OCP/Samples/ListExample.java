@@ -72,6 +72,7 @@ public class ListExample {
 				new Student("Helen","Java EE","Houston"),
 				new Student("Mark","Java ME","Chicago")
 				);
+		
 //stds.stream().collect(Collectors.groupingBy(Student::getCourse))
 //	  .forEach(src, res) -> System.out.println(scr); //Syntax error on token "->", invalid AssignmentOperator
 		
@@ -238,10 +239,32 @@ public class ListExample {
 		
 		System.out.println("---------------------------");
 		
-		Set<Car> cars = new TreeSet<>(); 
-		cars.add(new Car(10123, "Ford"));
-		cars.add(new Car(10124, "BMW"));
-		System.out.println(cars); 
+//		Set<Car> cars = new TreeSet<>(); 
+//		cars.add(new Car(10123, "Ford"));
+//		cars.add(new Car(10124, "BMW"));
+//		System.out.println(cars); 
 		// Exception in thread "main" java.lang.ClassCastException: com.Java8SEII.OCP.Samples.Car cannot be cast to java.lang.Comparable
+		
+		
+		System.out.println("---------------------------");
+		
+		List<String> cs = Arrays.asList("Java","Java EE","Java ME");
+		boolean b1 = cs.stream().findFirst().get().equals("Java");
+		boolean b2 = cs.stream().anyMatch(w -> w.equals ("Java"));
+		boolean b3 = cs.stream().findAny().get().equals("Java");
+		boolean b4 = cs.stream().allMatch(w -> w.equals("Java"));
+		System.out.println(b1); //true
+		System.out.println(b2); //true
+		System.out.println(b3); //true
+		System.out.println(b4); //false
+		
+		System.out.println("---------------------------");
+		
+		List<Blocks> block = new ArrayList<>();
+		block.add(new Blocks(10,"Green"));
+		block.add(new Blocks(7,"Red"));
+		block.add(new Blocks(12,"Blue"));
+		Collections.sort(block, new ColorSorter());
+		System.out.println(block);
 	}
 }

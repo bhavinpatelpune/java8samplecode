@@ -13,9 +13,9 @@ public class DatesExample {
 		
 		System.out.println("-----------------");
 		
-		LocalDateTime dt = LocalDateTime.of(2021, 7,31,1,1);
-		dt.plusDays(30);
-		dt.plusMonths(1);
+		LocalDateTime dt = LocalDateTime.of(2014, 7,31,1,1);
+		dt.plusDays (30);
+		dt. plusMonths (1);
 		System.out.println(dt.format(DateTimeFormatter.ISO_DATE_TIME));  // OP : 2021-07-31T01:01:00
 		
 		System.out.println("-----------------");
@@ -33,10 +33,32 @@ public class DatesExample {
 		//System.out.println(date2);
 		System.out.println(date3);
 		
-		String date = LocalDate
-				.parse("2014-05-04")
-				.format(DateTimeFormatter.ISO_DATE_TIME) ;
-		System.out.println(date); //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+//		String date = LocalDate
+//				.parse("2014-05-04")
+//				.format(DateTimeFormatter.ISO_DATE_TIME) ;
+		//System.out.println(date); //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+		
+		System.out.println("-----------------");
+		
+//		LocalDate date11 = LocalDate.now();
+//		LocalDate date22 = LocalDate.of(6, 20, 2014 );
+//		LocalDate date33 = LocalDate.parse("2014-06-20", DateTimeFormatter.ISO_DATE);
+//		System.out.println(date11);
+//		System.out.println(date22);
+//		System.out.println(date33);
+		
+//		LocalDate date = LocalDate.of(2012, 01, 32);
+//		date.plusDays(10);
+//		System.out.println(date); 
+		//Exception in thread "main" java.time.DateTimeException: Invalid value for DayOfMonth (valid values 1 - 28/31): 32
+		
+		System.out.println("-----------------");
+		
+		LocalDate date11 = LocalDate.of(2012, 01, 30);
+		date11.plusDays(10);
+		System.out.println(date11);  // 2012-01-30
+		//Exception in thread "main" java.time.DateTimeException: Invalid value for DayOfMonth (valid values 1 - 28/31): 32
+		
 	}
 
 }

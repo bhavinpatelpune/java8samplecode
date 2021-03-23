@@ -61,6 +61,47 @@ public class Loops {
 			}
 		}
 		
+		System.out.println("-----------------");
+		
+		int x = 100;
+		int a = x++;
+		int b = ++x;
+		int c = x++;
+		int d = (a < b) ? (a < c) ? a : (b < c) ? b : c : x;
+		System.out.println(d); // 100
+		
+		System.out.println("-----------------");
+		
+		int nn[][] = {{1,3},{2,4}};
+		for(int i= nn.length-1; i >=0;i--){
+			for(int y:nn[i]){
+				System.out.print(y); // 24 13
+			}
+		}
+		
+		System.out.println("-----------------");
+		
+		int[] stack = {10,20,30};
+		int size = 3;
+		int idx = 0;
+		
+//		do{
+//			idx++;
+//		} while (idx >= size); // 20
+		
+//		while(idx < size){
+//			idx++;
+//		} //Arrayindexoutofbound
+		
+		do{
+			idx++;
+		}while(idx<size-1); //Top Element : 30
+		
+//		do{
+//			idx++;
+//		}while(idx<=size);  ////Arrayindexoutofbound
+					
+		System.out.println("Top Element : " + stack[idx]);
 	}
 
 }
