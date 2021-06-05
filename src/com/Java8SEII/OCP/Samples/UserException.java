@@ -24,7 +24,7 @@ class UserException {
 			AgeOutOfLimitException {
 		if (name.length() < 6) {
 			throw new MyUserException();
-		} else if (age >= 60) {
+		} else if (age > 60) {
 			throw new AgeOutOfLimitException();
 		} else {
 			System.out.println("User is registered.");
@@ -33,6 +33,6 @@ class UserException {
 
 	public static void main(String[] args) throws MyUserException {
 		UserException t = new UserException();
-		t.doRegister("Bhavin", 35);  /// User is registered.
+		t.doRegister("Bhavin", 60);  /// User is registered.
 	}
 }

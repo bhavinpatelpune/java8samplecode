@@ -9,6 +9,7 @@ public class OptionalExample {
 		Optional<Address> addrs1 = Optional.ofNullable (address);
 		Employees e1 = new Employees (addrs1);
 		String eAddress = (addrs1.isPresent()) ? addrs1.get().getCity() : "City Not available";
+		System.out.println(eAddress);
 	}
 
 }

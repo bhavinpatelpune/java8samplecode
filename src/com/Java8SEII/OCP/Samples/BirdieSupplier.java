@@ -20,7 +20,7 @@ class BirdieSupplier {
 		fly(() -> new Bird());
 		fly(Penguin::new);  // Can fly Cannot fly
 	}
-	static void fly (Supplier<Bird> bird) 
+	static void fly (Supplier<? extends Bird> bird) 
 	{
 		bird.get().fly();  
 	}

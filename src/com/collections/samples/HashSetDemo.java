@@ -36,6 +36,15 @@ public class HashSetDemo {
 		 // Method-2 to print value using Enhanced Loop
 		 for(String s: hs){
 			 System.out.println(s + " ");
-		 }		 
+		 }
+		 
+		 System.out.println("----------");
+		 
+		 HashSet obj = new HashSet();
+		 obj.add("A");
+		 obj.add("B");
+		 obj.add("C");
+		 
+		 System.out.println(obj + " " + obj.size());
 	}
 }
